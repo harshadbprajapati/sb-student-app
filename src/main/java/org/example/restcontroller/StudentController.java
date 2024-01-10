@@ -1,7 +1,9 @@
 package org.example.restcontroller;
 
+import jakarta.annotation.PostConstruct;
 import org.example.entity.Student;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,9 +13,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class StudentController {
-    @GetMapping("/students")
-    List<Student> getAllStudents(){
-        List<Student> allStudents = new ArrayList<>();
+    private List<Student> allStudents;
+
+    @PostConstruct
+    public void loadStudents(){
+        allStudents = new ArrayList<>();
         allStudents.add(new Student(1, "Tom",
                 "tom@gmail.com", 6,
                 "Ahmedabad", "Male", "B.Tech-IT"));
@@ -23,7 +27,19 @@ public class StudentController {
         allStudents.add(new Student(3, "Jenifer",
                 "jenifer@gmail.com", 6,
                 "Vadodara", "Female", "B.Tech-IT"));
+    }
+    @GetMapping("/students")
+    List<Student> getAllStudents(){
         return allStudents;
+    }
+
+    @GetMapping("/students/{studentId}")
+    public Student getStudentById(@PathVariable int studentId){
+        Student matchingStudent = allStudents.stream()
+                .filter(student -> student.getId()==studentId)
+                .findFirst()
+                .orElse(null);
+        return matchingStudent;
     }
 }
 
