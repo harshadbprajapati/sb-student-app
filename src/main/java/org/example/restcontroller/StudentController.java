@@ -1,11 +1,8 @@
 package org.example.restcontroller;
 
 import jakarta.annotation.PostConstruct;
-import org.example.dto.StudentErrorResponse;
 import org.example.entity.Student;
 import org.example.exception.StudentNotFoundException;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -92,14 +89,5 @@ public class StudentController {
         return "Student with id="+studentId+" removed successfully.";
     }
 
-    @ExceptionHandler
-    public ResponseEntity<StudentErrorResponse> handleException(
-            StudentNotFoundException studentNotFoundException){
-        StudentErrorResponse errorResponse = new StudentErrorResponse();
-        errorResponse.setStatus(HttpStatus.NOT_FOUND.value());
-        errorResponse.setMessage(String.valueOf(studentNotFoundException.getMessage()));
-        errorResponse.setTimestamp(System.currentTimeMillis());
-        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
-    }
 }
 
