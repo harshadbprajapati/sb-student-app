@@ -1,0 +1,16 @@
+INSERT INTO `test`.`student`
+(
+`semester`,
+`city`,
+`email`,
+`gender`,
+`name`,
+`program`)
+VALUES
+(
+6,
+'Vadodara',
+'will@gmail.com',
+'Male',
+'Will',
+'B.Tech.-IT');
