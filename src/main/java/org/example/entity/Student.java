@@ -1,6 +1,15 @@
 package org.example.entity;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Student {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
     private String name;
     private String email;
@@ -8,6 +17,9 @@ public class Student {
     private String city;
     private String gender;
     private String program;
+
+    public Student() {
+    }
 
     public int getId() {
         return id;
@@ -65,9 +77,8 @@ public class Student {
         this.program = program;
     }
 
-    public Student(int id, String name, String email,
+    public Student(String name, String email,
                    int semester, String city, String gender, String program) {
-        this.id = id;
         this.name = name;
         this.email = email;
         this.semester = semester;
