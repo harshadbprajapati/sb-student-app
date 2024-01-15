@@ -22,5 +22,27 @@ public class StudentController {
         return studentService.findAll();
     }
 
+    @GetMapping("/students/{studentId}")
+    Student getStudentById(@PathVariable  int studentId){
+        return studentService.findById(studentId);
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

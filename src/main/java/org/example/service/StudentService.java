@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface StudentService {
     public List<Student> findAll();
+    public Student findById(int studentId);
 }
 
 
