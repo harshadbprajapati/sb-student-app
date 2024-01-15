@@ -18,15 +18,30 @@ public class StudentController {
     }
 
     @GetMapping("/students")
-    List<Student> getAllStudents(){
+    public List<Student> getAllStudents(){
         return studentService.findAll();
     }
 
     @GetMapping("/students/{studentId}")
-    Student getStudentById(@PathVariable  int studentId){
+    public Student getStudentById(@PathVariable  int studentId){
         return studentService.findById(studentId);
     }
 
+    @PostMapping("/students")
+    public Student createStudent(@RequestBody Student student){
+        return studentService.save(student);
+    }
+
+    @PutMapping("/students")
+    public Student updateStudent(@RequestBody Student student){
+        return studentService.update(student);
+    }
+
+    @DeleteMapping("/students/{studentId}")
+    public String deleteStudentById(@PathVariable int studentId){
+        studentService.deleteById(studentId);
+        return "Student with id " + studentId+" was deleted successfully";
+    }
 }
 
 
