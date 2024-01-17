@@ -47,10 +47,10 @@ public class StudentController {
         return student;
     }
 
-    @PutMapping("/students")
-    Student updateStudent(@RequestBody Student updateStudent){
+    @PatchMapping("/students/{studentId}")
+    Student updateStudent(@RequestBody Student updateStudent, @PathVariable int studentId){
         Student matchingStudent = allStudents.stream()
-                .filter(student -> student.getId()==updateStudent.getId())
+                .filter(student -> student.getId()==studentId)
                 .findFirst()
                 .orElse(null);
         if (matchingStudent!=null) {
