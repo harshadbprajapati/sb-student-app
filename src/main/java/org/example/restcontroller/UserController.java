@@ -33,12 +33,14 @@ public class UserController {
     }
 
     @PutMapping("/users/{userId}")
-    public UserDto updateUser(@RequestBody UserDto userDto, @PathVariable Long userId) {
+    public UserDto updateUser(@RequestBody UserDto userDto,
+                              @PathVariable Long userId) {
         return userService.update(userId, userDto);
     }
 
     @PatchMapping("/users/{userId}")
-    public UserDto partialUpdateUser(@RequestBody UserDto userDto, @PathVariable Long userId) {
+    public UserDto partialUpdateUser(@RequestBody UserDto userDto,
+                                     @PathVariable Long userId) {
         return userService.partialUpdate(userId, userDto);
     }
 
@@ -48,5 +50,10 @@ public class UserController {
         return "User with id "+userId+" was deleted successfully.";
     }
 }
+
+
+
+
+
 
 

@@ -28,3 +28,18 @@ public class AllExceptionHandler {
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
