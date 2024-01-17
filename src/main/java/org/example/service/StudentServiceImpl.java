@@ -46,8 +46,8 @@ public class StudentServiceImpl implements StudentService{
 
     @Transactional
     @Override
-    public Student update(Student updateStudent) {
-        Student matchingStudent = findById(updateStudent.getId());
+    public Student update(int studentId, Student updateStudent) {
+        Student matchingStudent = findById(studentId);
         if (matchingStudent!=null) {
             if(updateStudent.getName()!=null){
                 matchingStudent.setName(updateStudent.getName());
