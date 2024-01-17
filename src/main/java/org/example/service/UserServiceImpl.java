@@ -71,11 +71,13 @@ public class UserServiceImpl implements UserService{
     public UserDto update(Long userId, UserDto updateUserDto) {
         UserDto matchingUserDto = findById(userId);
         if(matchingUserDto==null){
-            throw new UserNotFoundException("User with id " + updateUserDto.getUserId() + " not found");
+            throw new UserNotFoundException("User with id " +
+                    updateUserDto.getUserId() + " not found");
         }
 
         if(updateUserDto.getUserName()==null || updateUserDto.getUserEmail()==null) {
-            throw new IncompleteRequestBodyException("Request body must contains the following fields: userName and userEmail");
+            throw new IncompleteRequestBodyException(
+                    "Request body must contains the following fields: userName and userEmail");
         }
         updateUserDto.setUserId(userId);
         User updatedUser = userRepository.save(modelMapper.map(updateUserDto, User.class));
@@ -94,7 +96,8 @@ public class UserServiceImpl implements UserService{
             }
         }
         if(matchingUserDto==null){
-            throw new UserNotFoundException("User with id " + updateUserDto.getUserId() + " not found");
+            throw new UserNotFoundException("User with id " +
+                    updateUserDto.getUserId() + " not found");
         }
         User updatedUser = userRepository.save(modelMapper.map(matchingUserDto, User.class));
         return modelMapper.map(updatedUser, UserDto.class);
