@@ -1,6 +1,5 @@
 package org.example.service;
 
-import org.example.dto.ErrorResponse;
 import org.example.dto.UserDto;
 import org.example.entity.User;
 import org.example.exception.IncompleteRequestBodyException;
