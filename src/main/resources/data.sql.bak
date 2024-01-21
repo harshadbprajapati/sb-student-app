@@ -46,14 +46,14 @@ ALTER TABLE `test`.`users`
 CHANGE COLUMN `password` `password` VARCHAR(68) NOT NULL ;
 
 UPDATE `test`.`users`
-SET password='$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'
+SET password='{bcrypt}$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'
 WHERE username='sylvester';
 
 UPDATE `test`.`users`
-SET password='$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'
+SET password='{bcrypt}$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'
 WHERE username='tom';
 
 UPDATE `test`.`users`
-SET password='$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'
+SET password='{bcrypt}$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'
 WHERE username='arnold';
 
