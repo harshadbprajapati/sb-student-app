@@ -27,3 +27,33 @@ VALUES
 'Male',
 'Will',
 'B.Tech.-IT');
+
+INSERT INTO `test`.`users`
+VALUES
+('sylvester', '{noop}pass123', 1),
+('tom', '{noop}pass123', 1),
+('arnold', '{noop}pass123', 1);
+
+
+INSERT INTO `test`.`authorities`
+VALUES
+('sylvester', 'student'),
+('tom', 'teacher'),
+('arnold', 'teacher'),
+('arnold', 'admin');
+
+ALTER TABLE `test`.`users`
+CHANGE COLUMN `password` `password` VARCHAR(68) NOT NULL ;
+
+UPDATE `test`.`users`
+SET password='$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'
+WHERE username='sylvester';
+
+UPDATE `test`.`users`
+SET password='$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'
+WHERE username='tom';
+
+UPDATE `test`.`users`
+SET password='$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'
+WHERE username='arnold';
+
