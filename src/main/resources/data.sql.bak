@@ -37,10 +37,10 @@ VALUES
 
 INSERT INTO `test`.`authorities`
 VALUES
-('sylvester', 'student'),
-('tom', 'teacher'),
-('arnold', 'teacher'),
-('arnold', 'admin');
+('sylvester', 'ROLE_STUDENT'),
+('tom', 'ROLE_TEACHER'),
+('arnold', 'ROLE_TEACHER'),
+('arnold', 'ROLE_ADMIN');
 
 ALTER TABLE `test`.`users`
 CHANGE COLUMN `password` `password` VARCHAR(68) NOT NULL ;
