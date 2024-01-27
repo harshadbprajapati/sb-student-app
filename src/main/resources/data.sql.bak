@@ -71,3 +71,25 @@ VALUES
 ('tom', 'ROLE_TEACHER'),
 ('arnold', 'ROLE_TEACHER'),
 ('arnold', 'ROLE_ADMIN');
+
+
+INSERT INTO `test`.`auth_users`
+(username, password ) VALUES
+('sylvester', '{bcrypt}$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'),
+('tom', '{bcrypt}$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'),
+('arnold', '{bcrypt}$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6');
+
+INSERT INTO `test`.`auth_roles`
+(name)
+VALUES
+('ROLE_STUDENT'),
+('ROLE_TEACHER'),
+('ROLE_ADMIN');
+
+INSERT INTO `test`.`auth_users_roles`
+(user_id, role_id)
+VALUES
+(1, 1),
+(2, 2),
+(3, 2),
+(3, 3);
