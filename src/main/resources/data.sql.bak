@@ -75,9 +75,9 @@ VALUES
 
 INSERT INTO `test`.`auth_users`
 (username, password ) VALUES
-('sylvester', '{bcrypt}$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'),
-('tom', '{bcrypt}$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'),
-('arnold', '{bcrypt}$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6');
+('sylvester', '$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'),
+('tom', '$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6'),
+('arnold', '$2a$12$0Hk9cOJhKpccjikRS7RlGepUKwJUQHQdiuN84JTbhRnrdfjop1lH6');
 
 INSERT INTO `test`.`auth_roles`
 (name)
